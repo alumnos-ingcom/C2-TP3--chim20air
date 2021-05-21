@@ -4,9 +4,9 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-class NoMoreReintentos(Exception):
-    """Esta es la excepcion para cuando se terminan la cantidad de reintentos"""
-    pass
+class IngresoIncorrecto(Exception):
+    """Esta es la Excepcion para el ingreso incorrecto"""
+    pass 
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     """Manejo de error del tipo de entrada"""
@@ -16,21 +16,24 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     except ValueError as err:
         print(cantidad_reintentos)
         if cantidad_reintentos == 0:
-            raise NoMoreReintentos("Volve a primaria pibe")
+            raise IngresoIncorrecto("Volve a primaria pibe") from err
         else:
             ingreso_entero_reintento(mensaje, cantidad_reintentos=cantidad_reintentos-1)
     return entero
 
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
-    pass
+    if not valor_minimo < 
 
 def IngresoEntero(mensaje):
+    global valor_minimo, valor_maximo
     ingreso = input(mensaje + ">>> ")
     try:
         entero = int(ingreso)
-    except ValueError as err:
+    except ValueError:
         ingreso_entero_reintento("Pibe un entero te estoy pidiendo")
-    return entero
+    else:
+        check = ingreso_entero_restringido("Verificacion de rango") 
+        return entero
 
 if __name__ == "__main__":
     print(IngresoEntero("mandale mecha"))
