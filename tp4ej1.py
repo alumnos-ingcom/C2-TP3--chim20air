@@ -9,23 +9,21 @@ class IngresoIncorrecto(Exception):
     pass 
 
 def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
-    """Manejo de error del tipo de entrada""" 
-    if(mensaje == "Pibe te estoy pidiendo un entero"):
-        try:
-            print("Me voy a poner como el de Jurassic Park")
-            print(f"Te quedan: {cantidad_reintentos} reintentos""")
-            entero = int(input(mensaje + ">>> "))
-        
-        except ValueError as err:
-            if cantidad_reintentos == 0:
-                raise IngresoIncorrecto("Volve a primaria pibe") from err
-            else:
-                entero = ingreso_entero_reintento(mensaje,
-                        cantidad_reintentos=cantidad_reintentos-1)
-        return entero
-    
-    elif(mensaje == "Atenente al rango"):
-        print("hello")
+    """Manejo de error del tipo o rango de entrada"""
+
+    print("Me voy a poner como el de Jurassic Park")
+    print(f"Te quedan {cantidad_reintentos} reintentos")
+    try:
+        entero = int(input(mensaje + ">>> "))
+    except ValueError as err:
+        if cantidad_reintentos == 0:
+            raise IngresoIncorrecto("Volve a primaria pibe") from err
+        else:
+            entero = ingreso_entero_reintento(mensaje,
+                    cantidad_reintentos=cantidad_reintentos-1)
+    return entero
+
+
 
 def IngresoEntero(mensaje):
     try:
@@ -36,15 +34,10 @@ def IngresoEntero(mensaje):
 
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
     """Funcion para restringir el rango de ingreso"""
-    try:
-        valor = IngresoEntero(mensaje)
-        if valor_minimo > valor or valor > valor_maximo:
-            raise ValueError
-    except ValueError as err:
-        print(f"No pibe, el entero tiene que estar entre {valor_minimo} y {valor_maximo}")
-        valor = ingreso_entero_restringido("Atenente al rango")
-
-    return valor
+    valor = IngresoEntero(mensaje)
+    if valor < valor_minimo or valor > valor_maximo:
+        raise IngresoIncorrecto(f"el entero tiene que estar entre {valor_minimo} y {valor_maximo}")
+   return valor
 
 
 if __name__ == "__main__":
