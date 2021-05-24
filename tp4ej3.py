@@ -4,16 +4,34 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
+import tp4ej1 as inp
+
 def convertir_a_fahrenheit(centigrados):
-    return (float(centigrados) * 1.8) + 32.0
+    return (centigrados * 1.8) + 32.0
 
 def convertir_a_centigrados(fahrenheit):
-    return (float(fahrenheit) - 32.0) / 1.8
+    return (fahrenheit - 32.0) / 1.8
+
+def prueba():
+    print('\033[2J')
+    print("""En este ejercicio, se supone que le tenes que poner un
+            numero en grados centigrados y que se convierta a 
+            fahrenheit, o viceversa""")
+    while True:
+        print("""
+En este ejercicio, se supone que le tenes que poner un
+numero en grados centigrados y que se convierta a 
+fahrenheit, o viceversa
+    Ingrese 1 para pasar a centigrados
+    Ingrese 2 para pasar a fahrenheit
+    Ingrese 3 para terminar la prueba""")
+        test = inp.ingreso_entero_restringido("ingrese opción", 1, 3)
+        if test == 1:
+            print(f"la función de convertir_a_centigrados regresa: {convertir_a_centigrados(inp.IngresoEntero('Ingresa un numero en °F'))}") 
+        elif test == 2:
+            print(f"la función de convertir_a_fahrenheit regresa: {convertir_a_fahrenheit(inp.IngresoEntero('Ingresa un numero en °C'))}") 
+        elif test == 3:
+            break
 
 if __name__ == "__main__":
-    print(f"20°C son {convertir_a_fahrenheit(20)}°F")
-    print(f"0.5°C son {convertir_a_fahrenheit(0.5)}°F")
-    print(f"98°F son {convertir_a_centigrados(98)}°C")
-    print(f"31.5°F son {convertir_a_centigrados(31.5)}°C")
-    print(f"0°C son {convertir_a_fahrenheit(0)}°F")
-    print(f"0°F son {convertir_a_centigrados(0)}°C")
+    prueba()
