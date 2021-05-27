@@ -44,7 +44,8 @@ Ingrese 1 para continuar con la prueba
 Ingrese 2 para terminar la prueba""")
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
-            print(f"la función de signo regresa: {signo(inp.IngresoEntero('Ingresa el numero'))}") 
+            ingreso = inp.IngresoEntero('Ingresa el numero')
+            print(f"la función de signo regresa: {signo(ingreso)}") 
         elif test == 2:
             break
 

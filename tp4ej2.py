@@ -28,9 +28,10 @@ def prueba():
     while True:
         print("Para frenar la prueba, el primer numero tiene que ser 256")
         a = ie("Vamos con el primer numero")
+        b = ie('Vamos con el segundo numero')
         if a == 256:
             break
-        print(f"la función de suma lenta regresa: {suma_lenta(a, ie('Vamos con el segundo numero'))}") 
+        print(f"la función de suma lenta regresa: {suma_lenta(a, b)}") 
 
 if __name__ == "__main__":
     prueba()

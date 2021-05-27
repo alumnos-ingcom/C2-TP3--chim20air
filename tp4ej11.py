@@ -26,7 +26,8 @@ un texto y el programa indica si es o no capicua
 
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
-            print(f"la función regresa: {es_palindromo(input('El texto de prueba >>> '))}") 
+            ingreso = input('El texto de prueba >>> ')
+            print(f"la función regresa: {es_palindromo(ingreso)}") 
             sleep(3)
         elif test == 2:
             break

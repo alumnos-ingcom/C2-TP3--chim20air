@@ -37,7 +37,9 @@ dos numeros y el programa devuelve:
     Ingrese 2 para terminar la prueba""")
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
-            print(f"la función de compara regresa: {compara(inp.IngresoEntero('Ingresa el primer numero'), inp.IngresoEntero('Ingresa el segundo numero'))}") 
+            ingreso1 = inp.IngresoEntero('Ingresa el primer numero')
+            ingreso2 = inp.IngresoEntero('Ingresa el segundo numero')
+            print(f"la función de compara regresa: {compara(ingreso1, ingreso2)}")
         elif test == 2:
             break
 

@@ -27,9 +27,11 @@ fahrenheit, o viceversa
     Ingrese 3 para terminar la prueba""")
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 3)
         if test == 1:
-            print(f"la función de convertir_a_centigrados regresa: {convertir_a_centigrados(inp.IngresoEntero('Ingresa un numero en °F'))}") 
+            ingreso = inp.IngresoEntero('Ingresa un numero en °F')
+            print(f"la función de convertir_a_centigrados regresa: {convertir_a_centigrados(ingreso)}") 
         elif test == 2:
-            print(f"la función de convertir_a_fahrenheit regresa: {convertir_a_fahrenheit(inp.IngresoEntero('Ingresa un numero en °C'))}") 
+            ingreso = inp.IngresoEntero('Ingresa un numero en °C')
+            print(f"la función de convertir_a_fahrenheit regresa: {convertir_a_fahrenheit(ingreso)}") 
         elif test == 3:
             break
 
