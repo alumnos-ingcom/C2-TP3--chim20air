@@ -13,10 +13,14 @@ def division_lenta(dividendo, divisor):
     valor del cociente y resto de dos números enteros.
     """
     cociente = 0
-
+    print(f"divisor: {divisor}")
+    print(f"dividendo: {dividendo}")
+    if divisor == 0:
+        raise ZeroDivisionError("División por cero!!") 
     while dividendo > divisor:
-        dividendo = dividendo - divisor
-        cociente += 1
+            dividendo = dividendo - divisor
+            cociente += 1
+
     #lo que quede en el dividendo es el resto
     return cociente, dividendo
 
