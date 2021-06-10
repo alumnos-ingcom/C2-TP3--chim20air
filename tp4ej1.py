@@ -12,7 +12,7 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     """Manejo de error del tipo o rango de entrada"""
 
     print("Me voy a poner como el de Jurassic Park")
-    print(f"Te quedan {cantidad_reintentos} reintentos")
+    print(f"Te quedan {cantidad_reintentos} reintentos para poner un entero")
     try:
         entero = int(input(mensaje + ">>> "))
     except ValueError as err:
@@ -37,7 +37,7 @@ def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
     valor = IngresoEntero(mensaje)
     if valor < valor_minimo or valor > valor_maximo:
         raise IngresoIncorrecto(f"el entero tiene que estar entre {valor_minimo} y {valor_maximo}")
-   return valor
+    return valor
 
 
 if __name__ == "__main__":
