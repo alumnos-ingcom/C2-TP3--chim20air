@@ -46,16 +46,22 @@ En este ejercicio, se supone que le tenes que ingresar
 
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 3)
         if test == 1:
-            print(f"""la función que ordena de menor a mayor regresa: {ordenar_menor_a_mayor(
-                    inp.IngresoEntero('ingrese el primer valor'),
-                    inp.IngresoEntero('ingrese el segundo valor'),
-                    inp.IngresoEntero('ingrese el tercer valor'))}""") 
+            primero = inp.IngresoEntero('ingrese el primer valor')
+            segundo = inp.IngresoEntero('ingrese el segundo valor')
+            tercero = inp.IngresoEntero('ingrese el tercer valor')
+            funcion = ordenar_menor_a_mayor(primero,
+                                            segundo,
+                                            tercero)
+            print(f"la función que ordena de menor a mayor regresa: {funcion}")
             sleep(10)
         elif test == 2:
-            print(f"""la función de orden de mayor a menor regresa: {ordenar_mayor_a_menor(
-                    inp.IngresoEntero('ingrese el primer valor'),
-                    inp.IngresoEntero('ingrese el segundo valor'),
-                    inp.IngresoEntero('ingrese el tercer valor'))}""") 
+            primero = inp.IngresoEntero('ingrese el primer valor')
+            segundo = inp.IngresoEntero('ingrese el segundo valor')
+            tercero = inp.IngresoEntero('ingrese el tercer valor')
+            funcion = ordenar_mayor_a_menor(primero,
+                                            segundo,
+                                            tercero)
+            print(f"""la función de orden de mayor a menor regresa: {funcion}""") 
             sleep(10)
         elif test == 3:
             break

@@ -34,7 +34,7 @@ del numero ingresado
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
             ingreso = inp.IngresoEntero('El numero de prueba')
-            print(f"la función regresa: {factores_primos(ingreso)}") 
+            print(f"la función regresa: {factores_primos(ingreso)}")
             sleep(5)
         elif test == 2:
             break

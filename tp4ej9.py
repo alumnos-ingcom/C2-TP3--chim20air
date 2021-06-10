@@ -35,8 +35,9 @@ un numero y el programa indica si es o no primo
 
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
-            ingreso =inp.IngresoEntero('El numero de prueba')
-            print(f"la función regresa: {es_primo(ingreso)}") 
+            ingreso = inp.IngresoEntero('El numero de prueba')
+            funcion = es_primo(ingreso)
+            print(f"la función regresa: {funcion}") 
             sleep(5)
         elif test == 2:
             break
